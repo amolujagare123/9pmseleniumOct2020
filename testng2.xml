@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="sites">
+
+    <test name="Module 1">
+        <classes>
+            <class name ="TestNGDemo.demos.ForumSites"/>
+            <class name ="TestNGDemo.demos.SocialSites"/>
+            <class name ="TestNGDemo.demos.TutorialsSites"/>
+        </classes>
+    </test>
+
+</suite>

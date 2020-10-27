@@ -15,7 +15,9 @@ public class LoginDemo2 {
     WebDriver driver;
 
 
-    @BeforeMethod // the method written below the annotation @BeforeMethod runs before every test method
+    @BeforeMethod
+    // the method written below the annotation @BeforeMethod
+    // runs before every test method
     public void mymethod1()
     {
         WebDriverManager.chromedriver().setup();
@@ -23,7 +25,9 @@ public class LoginDemo2 {
         driver.manage().window().maximize();
     }
 
-    @AfterMethod // the method written below the annotation @AfterMethod runs after every test method
+    @AfterMethod
+    // the method written below the annotation @AfterMethod
+    // runs after every test method
     public void mymethod2()
     {
         driver.close();

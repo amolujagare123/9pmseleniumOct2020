@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class Login3 {
 
-    static WebDriver driver;
+    WebDriver driver;
 
 
     @BeforeClass

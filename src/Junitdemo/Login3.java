@@ -11,7 +11,6 @@ public class Login3 {
 
     static WebDriver driver;
 
-
     @BeforeClass
     // the method written below the annotation @BeforeClass
     // runs before first test method of the class
