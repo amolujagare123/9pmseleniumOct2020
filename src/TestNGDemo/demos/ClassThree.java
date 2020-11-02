@@ -2,6 +2,7 @@ package TestNGDemo.demos;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class ClassThree {
@@ -31,9 +32,14 @@ public class ClassThree {
         System.out.println("classThreeTest2()");
     }
 
+
+    @Parameters({"username","password"})
     @Test
-    public void classThreeTest3()
+    public void classThreeTest3(String param1,String param2)
     {
+        String user = param1;
+        String pass = param2;
+        System.out.println("user:"+user+" pass:"+pass);
         System.out.println("classThreeTest3()");
     }
 }

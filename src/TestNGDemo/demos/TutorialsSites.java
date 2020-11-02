@@ -4,19 +4,33 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class TutorialsSites {
     WebDriver driver;
+
+
+    @Parameters("browser")
     @BeforeMethod
     // the method written below the annotation @BeforeMethod
     // runs before every test method
-    public void mymethod1()
+    public void mymethod1(String browserName)
     {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+        if(browserName.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
+        if(browserName.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
+
+
         driver.manage().window().maximize();
     }
 

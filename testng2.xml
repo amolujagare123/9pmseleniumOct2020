@@ -1,6 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="sites">
 
+    <parameter name="browser" value="firefox"/>
+
     <test name="Module 1">
         <classes>
             <class name ="TestNGDemo.demos.ForumSites"/>
