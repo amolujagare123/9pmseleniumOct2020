@@ -1,5 +1,6 @@
 package TestNGDemo.demos;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
@@ -24,6 +25,8 @@ public class ClassThree {
     public void classThreeTest1()
     {
         System.out.println("classThreeTest1()");
+
+        Assert.assertTrue(false,"This test is failed");
     }
 
     @Test (groups = "email")
