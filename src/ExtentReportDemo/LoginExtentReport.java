@@ -14,7 +14,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
+import static ExtentReportDemo.ScreenShotsDemo.MyRepors.takescreenshot;
 
 public class LoginExtentReport {
 
@@ -35,6 +38,7 @@ public class LoginExtentReport {
         reporter.config().setDocumentTitle("Regression Tests");
 
         extent  = new ExtentReports();
+
         extent.attachReporter(reporter);
 
 
@@ -47,7 +51,7 @@ public class LoginExtentReport {
 
 
     @Test
-    public void loginTest() throws InterruptedException {
+    public void loginTest() throws InterruptedException, IOException {
 
         ExtentTest test = extent.createTest("loginTestValid");
 
@@ -85,13 +89,16 @@ public class LoginExtentReport {
          catch (AssertionError e )
          {
              test.fail(e.getMessage());
+
+             test.addScreenCaptureFromPath("./screenshots/"+takescreenshot(driver));
+
          }
 
     }
 
 
     @Test
-    public void loginTest1() throws InterruptedException {
+    public void loginTest1() throws InterruptedException, IOException {
 
         ExtentTest test = extent.createTest("loginTestInValid");
 
@@ -133,6 +140,8 @@ public class LoginExtentReport {
         catch (AssertionError e )
         {
             test.fail(e.getMessage());
+            test.addScreenCaptureFromPath("./screenshots/"+takescreenshot(driver));
+
         }
 
 

@@ -1,46 +1,19 @@
 package TestNGDemo.demos;
 
+import ExtentReportDemo.ScreenShotsDemo.BeforeAfterTestMethod;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class TutorialsSites {
-    WebDriver driver;
+public class TutorialsSites extends BeforeAfterTestMethod {
 
-
-    @Parameters("browser")
-    @BeforeMethod
-    // the method written below the annotation @BeforeMethod
-    // runs before every test method
-    public void mymethod1(String browserName)
-    {
-
-        if(browserName.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        }
-        if(browserName.equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        }
-
-
-        driver.manage().window().maximize();
-    }
-
-    @AfterMethod
-    // the method written below the annotation @AfterMethod
-    // runs after every test method
-    public void mymethod2() throws InterruptedException {
-        Thread.sleep(4000);
-        driver.close();
-    }
 
     @Test (priority = 2)
     public void scriptingLogic()
@@ -58,5 +31,7 @@ public class TutorialsSites {
     public void javatpoint()
     {
         driver.get("https://www.javatpoint.com/");
+
+        Assert.assertEquals(true,false, "this test is failed");
     }
 }

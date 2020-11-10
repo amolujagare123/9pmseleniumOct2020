@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="my project 1">
+
+    <listeners>
+        <listener class-name="ExtentReportDemo.ScreenShotsDemo.MyListners"/>
+    </listeners>
+
+    <parameter name="username" value="dharani"/>
+    <parameter name="password"  value="priyanka"/>
+
+    <test name="Module 1">
+        <classes>
+            <class name="TestNGDemo.demos.ClassOne"/>
+             <class name="TestNGDemo.demos.ClassTwo"/>
+            <class name="TestNGDemo.demos.ClassThree"/>
+        </classes>
+    </test>
+
+</suite>
